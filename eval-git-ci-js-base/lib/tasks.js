@@ -25,10 +25,13 @@ function getTasks() {
   return tasks;
 }
 
+function countDone() {
+  return tasks.filter(t => t.done).length;
+}
 
 function reset() {
   tasks = [];
   nextId = 1;
 }
 
-module.exports = { getTasks, reset, toggleTask, addTask };
+module.exports = { getTasks, reset, toggleTask, addTask, countDone };
