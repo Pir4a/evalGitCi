@@ -12,6 +12,15 @@ beforeEach(() => {
   reset();
 });
 
+test('toggleTask toggles the done state of a task', () => {
+  tasks.push({ id: 1759323304565, done: false, title: 'Test task' });
+  
+  const toggledTask = toggleTask(1759323304565);
+  expect(toggledTask.done).toBe(true);
+});
+
+
+
 test('initial task list is empty', () => {
   expect(getTasks()).toEqual([]);
 });
