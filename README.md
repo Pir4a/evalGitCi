@@ -14,10 +14,13 @@ sur github : pull et merge request
 
 ## Git commandes explications !!!
 
-Git switch vs git checkout : switch permet de ... switch de branch ( changer de branche ), checkout aussi met permet aussi d'autre commandes comme pour restaurer des fichiers
+Git switch vs git checkout : switch permet de ... switch de branch ( changer de branche ), checkout aussi mais permet aussi d'autres commandes comme pour restaurer des fichiers
 Pull Vs Fetch : Pull fusionne les changements sur le repo distant, fetch recupere juste les fichiers / code inexistants sur le local.
 rebase vs revert : rebase réecrit l'historique, revert annule le precedent commit sans toucher a l'historique
 
+git tag : ajoute un marqueur pour un commit
+git stash: sauvegarde temporairement les modifications pour par exemple changer de branche sans perdres ses données.
+Une release est une version stable et fonctionnelle
 
 
 REPO : 
