@@ -5,11 +5,13 @@ let nextId = 1;
 
 function addTask(name) {
   if (typeof name !== 'string') throw new Error('Invalid name');
-  return {
+  const task = {
     id: Date.now(),
     name: name.trim(),
     done: false
   };
+  tasks.push(task); // <-- Add this line
+  return task;
 }
 
 function toggleTask(id) {
