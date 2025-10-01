@@ -12,19 +12,18 @@ beforeEach(() => {
   reset();
 });
 
+// FIXED: use public API instead of direct array manipulation
 test('toggleTask toggles the done state of a task', () => {
-  tasks.push({ id: 1759323304565, done: false, title: 'Test task' });
-  
-  const toggledTask = toggleTask(1759323304565);
+  const task = addTask('Test task');
+  expect(task.done).toBe(false);
+
+  const toggledTask = toggleTask(task.id);
   expect(toggledTask.done).toBe(true);
 });
-
-
 
 test('initial task list is empty', () => {
   expect(getTasks()).toEqual([]);
 });
-
 
 test('toggleTask toggles the done state of a task', () => {
   const task = addTask('Test toggle');
