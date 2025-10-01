@@ -1,4 +1,4 @@
-const { getTasks, reset, addTask, toggleTask } = require('../lib/tasks');
+const { getTasks, reset, addTask, toggleTask, countDone } = require('../lib/tasks');
 
 beforeEach(() => {
   reset();
@@ -38,4 +38,18 @@ test('toggleTask toggles the done state of a task', () => {
 
 test('toggleTask throws error if task not found', () => {
   expect(() => toggleTask(999)).toThrow('Task with id 999 not found');
+});
+
+test('countDone counts tasks marked done', () => {
+  addTask('task 1');
+  const task2 = addTask('task 2');
+  toggleTask(task2.id);
+  expect(countDone()).toBe(1);
+  
+  toggleTask(task2.id);
+  expect(countDone()).toBe(0);
+});
+
+test('countDone returns 0 if no tasks', () => {
+  expect(countDone()).toBe(0);
 });
